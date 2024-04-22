@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+import CoinTable from './CoinTable';
+import Navbar from './Navbar';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [currencies, setCurrencies] = useState([]);
+    const [offset, setOffset] = useState(0);
+
+    useEffect(() => {
+        fetchData();
+    }, [offset]);
+
+    const fetchData = async () => {
+        try {
+            const response = await axios.get(`https://api.coincap.io/v2/assets?limit=50&offset=${offset}`);
+            const data = response.data.data;
+            setCurrencies(prevCurrencies => [...prevCurrencies, ...data]);
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        }
+    };
+
+    const handleLoadMore = () => {
+        setOffset(prevOffset => prevOffset + 50);
+    };
+
+    return (
+        <div className="App">
+            <Navbar />
+            
+            <CoinTable currencies={currencies} />
+            <button onClick={handleLoadMore}>Load More</button>
+        </div>
+    );
 }
 
 export default App;

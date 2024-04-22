@@ -1,0 +1,35 @@
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Distribute items evenly */
+    align-items: center; /* Center items vertically */
+    padding: 10px; /* Add padding */
+    border-bottom: 1px solid #ccc; /* Add bottom border to navbar */
+}
+
+.nav-group {
+    display: flex;
+}
+
+#coincap {
+    order: 2; /* Display the coincap group in the middle */
+}
+
+.nav-item {
+    padding: 10px;
+    box-sizing: border-box;
+    text-align: center; /* Center text */
+}
+
+.logo {
+    width: 50px; /* Set the width of the logo */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 5px; /* Add a small margin between the logo and text */
+}
+
+.nav-group:last-child {
+    order: 3; /* Display the last group at the end */
+}
+
+.nav-item:last-child {
+    border-right: none; /* Remove right border from last item */
+}
