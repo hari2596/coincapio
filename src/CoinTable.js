@@ -1,16 +1,16 @@
 import React from 'react';
 import CoinRow from './CoinRow';
 
-const CoinTable = ({ currencies }) => {
+const CoinTable = ({ currencies, onSort }) => {
     return (
         <table>
             <thead>
                 <tr>
-                    <th>Rank</th>
+                    <th onClick={() => onSort('rank')}>Rank</th>
                     <th>Icon</th>
-                    <th>Name</th>
+                    <th onClick={() => onSort('name')}>Name</th>
                     <th>Symbol</th>
-                    <th>Price</th>
+                    <th onClick={() => onSort('price')}>Price</th>
                     <th>Market Cap</th>
                     <th>Volume</th>
                 </tr>
