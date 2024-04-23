@@ -1,6 +1,6 @@
 import React from "react";
 import "./Navbar.css";
-import logo from "./coincap.png";
+
 
 const Navbar = () => {
   return (
@@ -13,8 +13,8 @@ const Navbar = () => {
 
       <div className="nav-group" id="coincap">
         <div className="nav-item">
-          <img src={logo} alt="Coincap Logo" className="logo" />
-          Coincap
+        <img src="https://coincap.io/static/logos/black.svg" alt="Coincap Logo" className="logo" />
+          
         </div>
       </div>
 
@@ -28,3 +28,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+

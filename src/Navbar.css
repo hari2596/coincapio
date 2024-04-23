@@ -1,11 +1,17 @@
 
 
 .navbar {
-    display: flex;
-    justify-content: space-between; /* Distribute items evenly */
-    align-items: center; /* Center items vertically */
-    padding: 10px; /* Add padding */
-    border-bottom: 1px solid #ccc; /* Add bottom border to navbar */
+    
+        display: flex;
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        align-items: center;
+        justify-content: space-around;
+        padding: -5rem;
+        background-color: #ffffff;
+        border-bottom: 1px solid #0000001c;
+      
 }
 
 .nav-group {
@@ -23,9 +29,9 @@
 }
 
 .logo {
-    width: 50px; /* Set the width of the logo */
-    height: auto; /* Maintain aspect ratio */
-    margin-right: 5px; /* Add a small margin between the logo and text */
+    width: 70px; /* Set the width of the logo */
+    height: 70px; /* Maintain aspect ratio */
+    margin-right:10px; /* Add a small margin between the logo and text */
 }
 
 .nav-group:last-child {
@@ -33,7 +39,7 @@
 }
 
 .nav-item:last-child {
-    border-right: none; /* Remove right border from last item */
+    border-right:none; /* Remove right border from last item */
 }
 
 

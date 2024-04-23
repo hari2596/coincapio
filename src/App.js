@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import CoinTable from './CoinTable';
 import Navbar from './Navbar';
+import "./App.css";
+import { CurrMarketInfo } from './CurrMarketInfo';
 
 function App() {
     const [currencies, setCurrencies] = useState([]);
@@ -64,8 +66,11 @@ function App() {
     return (
         <div className="App">
             <Navbar onSearch={handleSearch} />
+            <CurrMarketInfo />
             <CoinTable currencies={filteredCurrencies} onSort={handleSort} />
-            <button onClick={handleLoadMore}>Load More</button>
+            <div className="load-more">
+                <button onClick={handleLoadMore}>Load More</button>
+            </div>
         </div>
     );
 }
